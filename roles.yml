@@ -1,0 +1,16 @@
+---
+- name: web-server configuration
+  hosts: web
+  become: yes
+
+  roles:
+    - webserver
+    - common
+    - security
+
+- name: db configuration
+  hosts: db
+  become: yes
+
+  roles:
+    - common
